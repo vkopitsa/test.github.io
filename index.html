@@ -41,62 +41,63 @@
 		    	}
 
 		        $.get( "https://cloud.of-it.org/api/cars?q=" + q, function( data ) {
-		        	count = data.length
-		        	for (var i = 0; i < data.length; i++) {
+					var rows = data.data.records;
+		        	count = data.data.total_record;
+		        	for (var i = 0; i < rows.length; i++) {
 		        		//console.log(data[i]);
-		        		var d = data[i];
+		        		var d = rows[i];
 
 		        		html += '<div class="card"><div class="card-body">';
 		        		
 		        		html += "<p>";
 		        		html += "<b>Номер: </b>";
-		        		html += d.Number;
+		        		html += d.number;
 		        		html += "</p>";
 
 		        		html += "<p>";
 		        		html += "<b>Модель: </b>";
-		        		html += d.AutoModel;
+		        		html += d.auto_model;
 		        		html += "</p>";
 
 						html += "<p>";
 		        		html += "<b>Рік випуску: </b>";
-		        		html += d.Year;
+		        		html += d.year;
 		        		html += "</p>";
 
 		        		html += "<p>";
 		        		html += "<b>Дата: </b>";
-		        		html += d.Date;
+		        		html += d.date;
 		        		html += "</p>";
 
 		        		html += "<p>";
 		        		html += "<b>Колір: </b>";
-		        		html += d.Color;
+		        		html += d.color;
 		        		html += "</p>";
 
 		        		html += "<p>";
 		        		html += "<b>Об'єм двигуна: </b>";
-		        		html += d.Capacity;
+		        		html += d.capacity;
 		        		html += "</p>";
 
 		        		html += "<p>";
 		        		html += "<b>Вага: </b>";
-		        		html += d.Weight;
+		        		html += d.weight;
 		        		html += "</p>";
 
 		        		html += "<p>";
 		        		html += "<b>Тип дії: </b>";
-		        		html += d.ActionType;
+		        		html += d.action_type;
 		        		html += "</p>";
 
 
 		        		html += "<p>";
 		        		html += "<b>Тип авто: </b>";
-		        		html += d.AutoType;
+		        		html += d.auto_type;
 		        		html += "</p>";
 
 		        		html += "<p>";
 		        		html += "<b>Тип кузова: </b>";
-		        		html += d.BodyType;
+		        		html += d.body_type;
 		        		html += "</p>";
 
 		        		html += "</div></div>";
